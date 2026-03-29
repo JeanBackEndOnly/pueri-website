@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('offer_title');
             $table->text('description');
             $table->string('time_available');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
