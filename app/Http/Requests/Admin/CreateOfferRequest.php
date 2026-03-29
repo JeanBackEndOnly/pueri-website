@@ -23,7 +23,7 @@ class CreateOfferRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
             'offer_title' => 'required|string|max:255|unique:offer,offer_title',
             'description' => 'required|string|min:20',
             'time_available' => 'required|string|max:255'
