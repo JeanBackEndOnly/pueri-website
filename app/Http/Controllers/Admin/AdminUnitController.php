@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\CreateunitRequest;
+use App\Http\Requests\Admin\CreateUnitRequest;
 use App\Http\Requests\Admin\UpdateUnitRequest;
 use App\Models\Unit;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +38,7 @@ class AdminUnitController extends Controller
         }
     }
     // Create Informations =============
-    public function store(CreateunitRequest $request){
+    public function store(CreateUnitRequest $request){
         try {
             $validatedData = $request->validated();
             $validatedData['unit_image'] = $request->hasFile('unit_image') ?
