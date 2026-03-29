@@ -16,7 +16,7 @@ class AdminUnitController extends Controller
         return view('admin.unit', compact('unit'));
     }
     public function show(){
-        return view('admin.management.Createunit');
+        return view('admin.management.CreateUnit');
     }
     public function showUpdate($id){
         $unit = Unit::findOrFail($id);

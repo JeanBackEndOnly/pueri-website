@@ -59,8 +59,8 @@ Route::middleware(['auth', 'admin'])
         Route::get('management/DeletePosition/{id}', [AdminPositionController::class, 'destroy'])->name('delete.position');
 
         // Contact management   
-        Route::post('management/CreatePosition', [AdminContactController::class, 'store'])->name('store.contact');
-        Route::put('management/CreatePosition', [AdminContactController::class, 'update'])->name('update.contact');
+        Route::post('contact', [AdminContactController::class, 'store'])->name('store.contact');
+        Route::put('contact', [AdminContactController::class, 'update'])->name('update.contact');
 
         // Applications management   
         Route::get('ViewApplication/{id}', [AdminApplicationController::class, 'show'])->name('view.application');
