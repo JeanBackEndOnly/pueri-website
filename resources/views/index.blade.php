@@ -324,6 +324,42 @@
                     <div class="jobs-slider-dots flex justify-center gap-2 mt-6" id="jobsSliderDots"></div>
                 </div>
             @endif
+
+           @if(isset($contact) && $contact->count())
+           <div class="mt-20 max-w-10xl">
+                <div class="text-center mb-12">
+                    <span class="inline-block px-4 py-1 bg-red-500/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-3 border border-red-500/30">
+                        Contact
+                    </span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 section-title">Contact us here</h2>
+                        <p class="text-white/60 mt-3">Be part of our mission to provide excellent childcare services</p>
+                </div>
+                <div class="mt-8 bg-white/5 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden mx-4 border border-white/10">
+                    <div class="inline-block items-center ">
+                        <div class="flex items-center justify-center max-w-10xl">
+                            <strong>
+                                {{ ($contact->mobile ?? 'none') }}
+                            </strong>
+                        </div>
+                        <div class="flex items-center justify-center max-w-10xl">
+                            <strong>
+                                {{ ($contact->phone ?? 'none') }}
+                            </strong>
+                        </div>
+                        <div class="flex items-center justify-center max-w-10xl">
+                            <strong>
+                                {{ ($contact->email ?? 'none') }}
+                            </strong>
+                        </div>
+                        <div class="flex items-center justify-center max-w-10xl">
+                            <strong>
+                                {{ ($contact->address ?? 'none') }}
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           @endif
         </div>
     </main>
 

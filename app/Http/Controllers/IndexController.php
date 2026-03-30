@@ -18,8 +18,8 @@ class IndexController extends Controller
         $information = Unit::with(['employee'])->get();
         $offers = Offer::all();
         $jobs = Position::all();
-        $contact = Contact::all();
-        return view('index', compact(['information', 'offers', 'jobs', 'Contact']));
+        $contact = Contact::where('id', 1)->first();
+        return view('index', compact(['information', 'offers', 'jobs', 'contact']));
     }
     public function show($id){
         $positionId = Position::findOrFail($id);
