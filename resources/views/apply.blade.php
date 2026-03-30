@@ -150,7 +150,7 @@
                         </div>
                         
                         <!-- Work Experience -->
-                        <h3 class="text-lg font-semibold text-white mb-4 pb-2 border-b border-white/20 mt-6">Work Experience</h3>
+                        <h3 class="text-lg font-semibold text-white mb-4 pb-2 border-b border-white/20 mt-6">Work Experience - (if none, type N/A)</h3>
                         
                         <div id="work-experience-container" class="space-y-4 mb-6">
                             <div class="work-experience-item border border-white/20 rounded-lg p-4 relative">
