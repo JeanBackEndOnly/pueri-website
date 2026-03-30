@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminOfferController;
 use App\Http\Controllers\Admin\AdminPositionController;
 use App\Http\Controllers\Admin\AdminApplicationController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\MemberProfileController;
 use App\Http\Controllers\Admin\AdminUnitController;
 
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/apply/{id}', [IndexController::class, 'show'])->name('apply.job');
 Route::post('/apply/{id}', [IndexController::class, 'store'])->name('apply.store');
+Route::get('profile/{id}', [MemberProfileController::class, 'show'])->name('member.profile');
 
 
 Route::middleware(['auth', 'admin'])

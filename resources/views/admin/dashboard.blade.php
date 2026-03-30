@@ -65,7 +65,7 @@
                             <div class="text-white/60 text-sm mt-1">Expert Staff</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-white">50+</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white">10+</div>
                             <div class="text-white/60 text-sm mt-1">Services Offered</div>
                         </div>
                         <div class="text-center">
@@ -73,7 +73,7 @@
                             <div class="text-white/60 text-sm mt-1">Happy Families</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-white">108+</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white">50+</div>
                             <div class="text-white/60 text-sm mt-1">Years of Service</div>
                         </div>
                     </div>

@@ -15,6 +15,8 @@ class Employee extends Model
         'mname',
         'lname',
         'suffix',
+        'email',
+        'contact',
         'profile',
         'position',
         'about',

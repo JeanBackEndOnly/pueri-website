@@ -82,6 +82,21 @@
                                                class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-red-500 focus:border-transparent">
                                     </div>
                                 </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-1">Email</label>
+                                        <input type="text" name="email" value="{{ old('email') }}" 
+                                               class="w-full bg-white/10 border border-white/20 rounded-lg px-3
+                                                py-2 text-white focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-1">Contact</label>
+                                        <input type="text" name="contact" value="{{ old('contact') }}" 
+                                               class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2
+                                                text-white focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                    </div>
+                                </div>
                                 
                                 <div>
                                     <label class="block text-sm font-medium text-white/80 mb-1">Time Available</label>

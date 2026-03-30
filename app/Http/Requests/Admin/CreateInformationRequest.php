@@ -28,6 +28,8 @@ class CreateInformationRequest extends FormRequest
             'mname' => 'nullable|string|max:255',
             'lname' => 'required|string|max:255',
             'suffix' => 'nullable|string|max:255',
+            'email' => 'nullable|string|max:255',
+            'contact' => 'nullable|string|max:15',
             'about' => 'required|string|min:20',
             'time_available' => 'required|string|max:255',
             'position' => 'required|string|max:255',

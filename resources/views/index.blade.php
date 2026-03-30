@@ -108,6 +108,18 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
                             </svg>
                         </a>
+                        <a href="#positions" class="group smooth-link inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/20">
+                            <span>Career Opportunities</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="#contacts" class="group smooth-link inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/20">
+                            <span> Get in Touch</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
                     </div>
                     
                     <!-- Stats -->
@@ -117,7 +129,7 @@
                             <div class="text-white/60 text-sm mt-1">Expert Staff</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-white">50+</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white">10+</div>
                             <div class="text-white/60 text-sm mt-1">Services Offered</div>
                         </div>
                         <div class="text-center">
@@ -125,7 +137,7 @@
                             <div class="text-white/60 text-sm mt-1">Happy Families</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-white">108+</div>
+                            <div class="text-3xl md:text-4xl font-bold text-white">50+</div>
                             <div class="text-white/60 text-sm mt-1">Years of Service</div>
                         </div>
                     </div>
@@ -262,7 +274,7 @@
 
             <!-- Job Vacancies Slider -->
             @if(isset($jobs) && $jobs->count())
-                <div class="mt-20">
+                <div class="mt-20" id="positions">
                     <div class="text-center mb-12">
                         <span class="inline-block px-4 py-1 bg-red-500/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-3 border border-red-500/30">
                             Career Opportunities
@@ -325,41 +337,110 @@
                 </div>
             @endif
 
-           @if(isset($contact) && $contact->count())
-           <div class="mt-20 max-w-10xl">
+          @if(isset($contact) && $contact)
+            <div class="mt-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" id="contacts">
+                
+                <!-- Section Header -->
                 <div class="text-center mb-12">
                     <span class="inline-block px-4 py-1 bg-red-500/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-3 border border-red-500/30">
-                        Contact
+                        📞 Get in Touch
                     </span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 section-title">Contact us here</h2>
-                        <p class="text-white/60 mt-3">Be part of our mission to provide excellent childcare services</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Connect with Us</h2>
+                    <p class="text-white/60 max-w-xl mx-auto">
+                        Have questions or need assistance? Reach out to us — we're here to help.
+                    </p>
                 </div>
-                <div class="mt-8 bg-white/5 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden mx-4 border border-white/10">
-                    <div class="inline-block items-center ">
-                        <div class="flex items-center justify-center max-w-10xl">
-                            <strong>
-                                {{ ($contact->mobile ?? 'none') }}
-                            </strong>
-                        </div>
-                        <div class="flex items-center justify-center max-w-10xl">
-                            <strong>
-                                {{ ($contact->phone ?? 'none') }}
-                            </strong>
-                        </div>
-                        <div class="flex items-center justify-center max-w-10xl">
-                            <strong>
-                                {{ ($contact->email ?? 'none') }}
-                            </strong>
-                        </div>
-                        <div class="flex items-center justify-center max-w-10xl">
-                            <strong>
-                                {{ ($contact->address ?? 'none') }}
-                            </strong>
+
+                <!-- Contact Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Mobile -->
+                    @if($contact->mobile)
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center group-hover:bg-red-500/30 transition">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white/40 text-xs uppercase tracking-wider mb-1">Mobile</p>
+                                <p class="text-white text-lg font-semibold">{{ $contact->mobile }}</p>
+                                <p class="text-white/40 text-sm mt-1">Available 24/7</p>
+                            </div>
                         </div>
                     </div>
+                    @endif
+
+                    <!-- Phone -->
+                    @if($contact->phone)
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center group-hover:bg-red-500/30 transition">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white/40 text-xs uppercase tracking-wider mb-1">Phone</p>
+                                <p class="text-white text-lg font-semibold">{{ $contact->phone }}</p>
+                                <p class="text-white/40 text-sm mt-1">Mon-Fri, 8am-5pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    <!-- Email -->
+                    @if($contact->email)
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center group-hover:bg-red-500/30 transition">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 break-words">
+                                <p class="text-white/40 text-xs uppercase tracking-wider mb-1">Email</p>
+                                <p class="text-white text-lg font-semibold break-all">{{ $contact->email }}</p>
+                                <p class="text-white/40 text-sm mt-1">We'll respond within 24h</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    <!-- Address -->
+                    @if($contact->address)
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 md:col-span-2">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center group-hover:bg-red-500/30 transition">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-white/40 text-xs uppercase tracking-wider mb-1">Address</p>
+                                <p class="text-white text-lg font-semibold">{{ $contact->address }}</p>
+                                <p class="text-white/40 text-sm mt-1">Visit us during business hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
                 </div>
-           </div>
-           @endif
+
+                <!-- Optional: Social Links or Map CTA -->
+                <div class="text-center mt-8">
+                    <a href="https://www.google.com/maps/place/Zamboanga+Puericulture+Center+Maternity+Lying-in+Hospital/@6.9071992,122.0730394,17z/data=!3m1!4b1!4m6!3m5!1s0x3250426b2b2d3f29:0x6b4ede3b0b21729!8m2!3d6.9071939!4d122.0756143!16s%2Fg%2F11b66fv081?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition text-sm">
+                        <span>View on Google Maps</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        @endif
         </div>
     </main>
 
@@ -471,32 +552,34 @@
                 teamTitle.textContent = `${section.unit_name} Team Members`;
                 
                 let html = '';
-                members.forEach((member, idx) => {
-                    const fullName = `${member.fname} ${member.mname ? member.mname.charAt(0) + '. ' : ''}${member.lname} ${member.suffix || ''}`.trim();
-                    html += `
-                        <div class="group bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden border border-white/10" style="animation-delay: ${idx * 0.05}s">
-                            <div class="relative h-64 overflow-hidden">
-                                ${member.profile ? 
-                                    `<img src="{{ asset('storage/') }}/${member.profile}" alt="${fullName}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` :
-                                    `<img src="{{ asset('system_image/users.png') }}" alt="Default Avatar" class="w-full h-full object-cover p-8 bg-white/5">`
-                                }
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-600 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-400">
-                                    <p class="text-white text-sm font-medium flex items-center gap-1">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        ${member.time_available || 'Flexible Schedule'}
-                                    </p>
+                    members.forEach((member, idx) => {
+                        const fullName = `${member.fname} ${member.mname ? member.mname.charAt(0) + '. ' : ''}${member.lname} ${member.suffix || ''}`.trim();
+                        html += `
+                            <a href="/profile/${member.id}" 
+                                class="group bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden border border-white/10 block"
+                                style="animation-delay: ${idx * 0.05}s">
+                                <div class="relative h-64 overflow-hidden">
+                                    ${member.profile ? 
+                                        `<img src="/storage/${member.profile}" alt="${fullName}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` :
+                                        `<img src="/system_image/users.png" alt="Default Avatar" class="w-full h-full object-cover p-8 bg-white/5">`
+                                    }
+                                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-600 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-400">
+                                        <p class="text-white text-sm font-medium flex items-center gap-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            ${member.time_available || 'Flexible Schedule'}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="p-5 text-center">
-                                <h3 class="text-lg font-bold text-white mb-1">${fullName}</h3>
-                                <p class="text-red-400 font-medium text-sm">${member.position}</p>
-                                <div class="w-12 h-0.5 bg-red-500/50 mx-auto mt-4 group-hover:w-16 transition-all duration-300"></div>
-                            </div>
-                        </div>
-                    `;
-                });
+                                <div class="p-5 text-center">
+                                    <h3 class="text-lg font-bold text-white mb-1">${fullName}</h3>
+                                    <p class="text-red-400 font-medium text-sm">${member.position}</p>
+                                    <div class="w-12 h-0.5 bg-red-500/50 mx-auto mt-4 group-hover:w-16 transition-all duration-300"></div>
+                                </div>
+                            </a>
+                        `;
+                    });
                 membersContainer.innerHTML = html;
             }
             
