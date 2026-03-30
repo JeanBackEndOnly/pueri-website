@@ -9,6 +9,7 @@ use App\Models\Offer;
 use App\Models\Position;
 use App\Models\Form;
 use App\Models\Files;
+use App\Models\Contact;
 use App\Models\Workexp;
 
 class IndexController extends Controller
@@ -17,7 +18,8 @@ class IndexController extends Controller
         $information = Unit::with(['employee'])->get();
         $offers = Offer::all();
         $jobs = Position::all();
-        return view('index', compact(['information', 'offers', 'jobs']));
+        $contact = Contact::all();
+        return view('index', compact(['information', 'offers', 'jobs', 'Contact']));
     }
     public function show($id){
         $positionId = Position::findOrFail($id);

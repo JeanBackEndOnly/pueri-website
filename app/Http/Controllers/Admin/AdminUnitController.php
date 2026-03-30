@@ -20,7 +20,7 @@ class AdminUnitController extends Controller
     }
     public function showUpdate($id){
         $unit = Unit::findOrFail($id);
-        return view('admin.management.updateUnit', compact('unit'));
+        return view('admin.management.UpdateUnit', compact('unit'));
     }
     public function showDelete($id){
         $unit = Unit::find($id);
