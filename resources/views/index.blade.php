@@ -154,7 +154,7 @@
             </div>
 
             <!-- Offers Slider -->
-            @if(isset($offers) && $offers->count())
+           @if(isset($offers) && $offers->count())
                 <div id="services" class="mb-20 scroll-mt-20">
                     <div class="text-center mb-12">
                         <span class="inline-block px-4 py-1 bg-red-500/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-3 border border-red-500/30">
@@ -164,42 +164,58 @@
                         <p class="text-white/60 mt-3">Comprehensive healthcare services tailored for your child's needs</p>
                     </div>
                     
-                    <div class="offers-slider-container relative">
-                        <div class="offers-slider-track flex" id="offersSliderTrack">
-                            @foreach ($offers as $index => $offer)
-                                <div class="offers-slider-slide flex-shrink-0 w-full" data-offer-id="{{ $index }}">
-                                    <div class="offer-card mx-4">
-                                        <div class="relative h-64 overflow-hidden">
-                                            @if($offer->image)
-                                                <img src="{{ asset('storage/' . $offer->image) }}" 
-                                                     alt="{{ $offer->offer_title }}"
-                                                     class="w-full h-full object-cover">
-                                            @else
-                                                <div class="w-full h-full bg-gradient-to-br from-red-900/30 to-red-800/30 flex items-center justify-center">
-                                                    <span class="text-6xl">📋</span>
+                    <div class="max-w-4xl mx-auto px-4">
+                        <div class="offers-slider-container relative">
+                            <div class="offers-slider-track flex" id="offersSliderTrack">
+                                @foreach ($offers as $index => $offer)
+                                    <div class="offers-slider-slide flex-shrink-0 w-full" data-offer-id="{{ $index }}">
+                                        <div class="offer-card max-w-2xl mx-auto bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300">
+                                            <div class="relative h-64 overflow-hidden">
+                                                @if($offer->image)
+                                                    <img src="{{ asset('storage/' . $offer->image) }}" 
+                                                        alt="{{ $offer->offer_title }}"
+                                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                                @else
+                                                    <div class="w-full h-full bg-gradient-to-br from-red-900/30 to-red-800/30 flex items-center justify-center">
+                                                        <span class="text-6xl">🏥</span>
+                                                    </div>
+                                                @endif
+                                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                                                    <p class="text-white text-sm flex items-center gap-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                        </svg>
+                                                        {{ $offer->time_available ?? 'Flexible Schedule' }}
+                                                    </p>
                                                 </div>
-                                            @endif
-                                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                                <p class="text-white text-sm flex items-center gap-1">
-                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                    </svg>
-                                                    {{ $offer->time_available ?? 'Flexible Schedule' }}
-                                                </p>
+                                            </div>
+                                            <div class="p-6">
+                                                <h3 class="text-xl font-bold text-white mb-2">{{ $offer->offer_title }}</h3>
+                                                <p class="text-white/60 text-sm leading-relaxed">{{ $offer->description }}</p>
+                                                
+                                                @if($offer->price ?? false)
+                                                    <div class="mt-4 pt-4 border-t border-white/10">
+                                                        <span class="text-red-400 font-bold text-lg">₱{{ number_format($offer->price, 2) }}</span>
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
-                                        <div class="p-6">
-                                            <h3 class="text-xl font-bold text-white mb-2">{{ $offer->offer_title }}</h3>
-                                            <p class="text-white/60 text-sm line-clamp-3">{{ $offer->description }}</p>
-                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+                            
+                            <!-- Navigation Buttons -->
+                            <button class="slider-btn offers-slider-btn-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 bg-white/10 hover:bg-red-500/80 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-red-500" id="offersPrevBtn">
+                                ←
+                            </button>
+                            <button class="slider-btn offers-slider-btn-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 bg-white/10 hover:bg-red-500/80 rounded-full flex items-center justify-center text-white text-2xl transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-red-500" id="offersNextBtn">
+                                →
+                            </button>
                         </div>
-                        <button class="slider-btn offers-slider-btn-prev" id="offersPrevBtn">←</button>
-                        <button class="slider-btn offers-slider-btn-next" id="offersNextBtn">→</button>
+                        
+                        <!-- Dots -->
+                        <div class="offers-slider-dots flex justify-center gap-2 mt-6" id="offersSliderDots"></div>
                     </div>
-                    <div class="offers-slider-dots flex justify-center gap-2 mt-6" id="offersSliderDots"></div>
                 </div>
             @endif
 
