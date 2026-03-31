@@ -39,6 +39,7 @@ class AdminAboutController extends Controller
     public function store(CreateInformationRequest $request){
         try {
             $validatedData = $request->validated();
+            
             $validatedData['profile'] = $request->hasFile('profile') ?
                 $request->file('profile')->store('images', 'public') : null;
             Employee::create($validatedData);

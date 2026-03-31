@@ -172,7 +172,7 @@
                                         <div class="offer-card max-w-2xl mx-auto bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-300">
                                             <div class="relative h-64 overflow-hidden">
                                                 @if($offer->image)
-                                                    <img src="{{ asset('storage/' . $offer->image) }}" 
+                                                    <img src="{{ Storage::disk('public')->url($offer->image) }}"
                                                         alt="{{ $offer->offer_title }}"
                                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                                 @else
@@ -240,7 +240,7 @@
                                                 <div class="absolute inset-0 bg-red-500 rounded-full blur-xl opacity-30 animate-pulse"></div>
                                                 <div class="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-red-500/30 shadow-xl">
                                                     @if($info->unit_image)
-                                                        <img src="{{ asset('storage/' . $info->unit_image) }}" 
+                                                         <img src="{{ Storage::disk('public')->url($info->unit_image) }}"
                                                              class="w-full h-full object-cover">
                                                     @else
                                                         <img src="{{ asset('system_image/pueri-logo.png') }}" 
@@ -470,7 +470,17 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all images that fail to load
+            document.querySelectorAll('img').forEach(img => {
+                img.onerror = function() {
+                    this.src = '/system_image/users.png';
+                    this.onerror = null; // Prevent infinite loop
+                };
+            });
+        });
+    </script>
     <script>
         // Pass data to JavaScript
         const offersData = @json($offers ?? []);

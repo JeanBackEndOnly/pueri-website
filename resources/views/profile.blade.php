@@ -40,7 +40,7 @@
                             <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-red-500/30 shadow-lg">
                                 <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
                                 @if($profile->profile)
-                                    <img src="{{ asset('storage/' . $profile->profile) }}" 
+                                    <img src="{{ Storage::disk('public')->url($profile->profile) }}"
                                          alt="{{ $profile->fname }} {{ $profile->lname }}"
                                          class="relative w-full h-full object-cover">
                                 @else
@@ -95,7 +95,7 @@
                                 <div class="flex items-start gap-4">
                                     @if($profile->unit->unit_image)
                                         <div class="flex-shrink-0">
-                                            <img src="{{ asset('storage/' . $profile->unit->unit_image) }}" 
+                                             <img src="{{ Storage::disk('public')->url($profile->unit->unit_image) }}"
                                                  alt="{{ $profile->unit->unit_name }}"
                                                  class="w-16 h-16 rounded-lg object-cover border border-white/20">
                                         </div>
@@ -161,7 +161,17 @@
             </div>
         </div>
     </div>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all images that fail to load
+            document.querySelectorAll('img').forEach(img => {
+                img.onerror = function() {
+                    this.src = '/system_image/users.png';
+                    this.onerror = null; // Prevent infinite loop
+                };
+            });
+        });
+    </script>
     <!-- Alpine.js for any interactivity -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>

@@ -119,5 +119,16 @@
                 {{ $slot }}
             </main>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Handle all images that fail to load
+                document.querySelectorAll('img').forEach(img => {
+                    img.onerror = function() {
+                        this.src = '/system_image/users.png';
+                        this.onerror = null; // Prevent infinite loop
+                    };
+                });
+            });
+        </script>
     </body>
 </html>
