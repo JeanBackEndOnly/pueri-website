@@ -28,7 +28,7 @@
                             <div class="relative group">
                                 <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-red-500/30 shadow-lg">
                                     <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
-                                    <img src="{{ asset('storage/' . $info->profile) }}" 
+                                    <img src="{{ Storage::disk('public')->url($info->profile) }}"
                                          id="avatar-preview"
                                          alt=""
                                          class="relative w-full h-full object-cover">

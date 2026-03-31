@@ -163,11 +163,11 @@
                                                 <!-- Modal Content -->
                                                 <div class="p-4 overflow-auto max-h-[calc(90vh-80px)]">
                                                     @if($isImage)
-                                                        <img src="{{ asset('storage/' . $file->file) }}" 
+                                                        <img src="{{ Storage::disk('public')->url($file->file) }}" 
                                                             alt="{{ $file->file_name }}"
                                                             class="max-w-full h-auto mx-auto rounded-lg">
                                                     @elseif($isPdf)
-                                                        <iframe src="{{ asset('storage/' . $file->file) }}#toolbar=0&navpanes=0" 
+                                                        <iframe src="{{ Storage::disk('public')->url($file->file) }}#toolbar=0&navpanes=0" 
                                                                 class="w-full h-[70vh] rounded-lg"
                                                                 frameborder="0"></iframe>
                                                     @else
@@ -176,7 +176,7 @@
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                                             </svg>
                                                             <p class="text-white/50 mb-4">Preview not available for this file type</p>
-                                                            <a href="{{ asset('storage/' . $file->file) }}" 
+                                                            <a href="{{ Storage::disk('public')->url($file->file) }}" 
                                                             download
                                                             class="inline-flex items-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition">
                                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

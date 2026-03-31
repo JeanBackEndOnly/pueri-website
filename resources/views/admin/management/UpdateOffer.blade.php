@@ -29,7 +29,7 @@
                                 <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-red-500/30 shadow-lg">
                                     <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
                                     @if (isset($offer->image))
-                                        <img src="{{ asset('storage/' . $offer->image) }}" 
+                                        <img src="{{ Storage::disk('public')->url($offer->image) }}"
                                              id="avatar-preview"
                                              alt=""
                                              class="relative w-full h-full object-cover">

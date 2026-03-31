@@ -41,7 +41,7 @@
                                             <div class="relative">
                                                 <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
                                                 @if(isset($info->unit_image))
-                                                    <img src="{{ asset('storage/' . $info->unit_image) }}" 
+                                                    <img src="{{ Storage::disk('public')->url($info->profile) }}"
                                                          class="relative h-24 w-24 rounded-full object-cover border-4 border-red-500/30 shadow-md">
                                                 @else
                                                     <img src="{{ asset('system_image/pueri-logo.png') }}" 

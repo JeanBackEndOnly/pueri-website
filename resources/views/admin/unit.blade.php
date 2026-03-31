@@ -40,7 +40,7 @@
                                                 <img src="{{ asset('system_image/pueri-logo.png') }}" class="h-20 w-20 opacity-30" alt="Puericulture">
                                             </div>
                                         @else
-                                            <img src="{{ asset('storage/' . $sect->unit_image) }}" 
+                                            <img src="{{ Storage::disk('public')->url($sect->unit_image) }}"
                                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                         @endif
                                     </div>
