@@ -59,7 +59,7 @@
                     </div>
                     
                     <!-- Stats -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    {{-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
                         <div class="text-center">
                             <div class="text-3xl md:text-4xl font-bold text-white">100+</div>
                             <div class="text-white/60 text-sm mt-1">Expert Staff</div>
@@ -76,7 +76,7 @@
                             <div class="text-3xl md:text-4xl font-bold text-white">50+</div>
                             <div class="text-white/60 text-sm mt-1">Years of Service</div>
                         </div>
-                    </div>
+                    </div> --}}
                     
                     <!-- Scroll Indicator -->
                     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
