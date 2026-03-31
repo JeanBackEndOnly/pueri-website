@@ -1,41 +1,17 @@
-        /* Smooth Scroll Behavior */
-        html {
+html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Adjusts for fixed header offset */
+            scroll-padding-top: 80px;
         }
 
-        /* Optional: Custom scroll easing for more control */
-        @media (prefers-reduced-motion: no-preference) {
-            :root {
-                scroll-behavior: smooth;
-            }
-        }
-
-        /* For browsers that don't support scroll-behavior, add JavaScript fallback */
-        .no-smooth-scroll {
-            scroll-behavior: auto;
-        }
-
-        /* Smooth scroll for specific elements */
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
-        /* Scroll offset for fixed headers */
-        * {
-            scroll-margin-top: 80px; /* Adds offset when scrolling to elements */
-        }
         * {
             font-family: 'Inter', sans-serif;
         }
         
-        /* Global Background */
         body {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d1a1a 100%);
             position: relative;
         }
         
-        /* Animated Background Pattern */
         body::before {
             content: '';
             position: fixed;
@@ -49,7 +25,6 @@
             z-index: 0;
         }
         
-        /* Floating Shapes */
         .bg-shape {
             position: fixed;
             border-radius: 50%;
@@ -59,21 +34,19 @@
             pointer-events: none;
         }
         
-        /* Custom Slider Styles */
-        .slider-container {
+        /* Slider Styles */
+        .slider-container, .offers-slider-container, .jobs-slider-container {
             position: relative;
             overflow: hidden;
             border-radius: 1.5rem;
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(10px);
         }
         
-        .slider-track {
+        .slider-track, .offers-slider-track, .jobs-slider-track {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
         
-        .slider-slide {
+        .slider-slide, .offers-slider-slide, .jobs-slider-slide {
             flex: 0 0 100%;
         }
         
@@ -105,13 +78,8 @@
             border-color: transparent;
         }
         
-        .slider-btn-prev {
-            left: 20px;
-        }
-        
-        .slider-btn-next {
-            right: 20px;
-        }
+        .slider-btn-prev { left: 20px; }
+        .slider-btn-next { right: 20px; }
         
         .slider-dots {
             display: flex;
@@ -135,21 +103,45 @@
             background: #ef4444;
         }
         
-        /* Card Animations */
-        .member-card {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
+        .offer-card, .team-card, .job-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.5s ease;
         }
         
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .offer-card:hover, .team-card:hover, .job-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
+            border-color: rgba(239,68,68,0.3);
         }
         
-        /* Scrollbar */
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #ef4444 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            border-radius: 3px;
+        }
+        
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -169,44 +161,4 @@
             background: #dc2626;
         }
         
-        /* Card Styles */
-        .offer-card, .team-card, .job-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-        
-        .offer-card:hover, .team-card:hover, .job-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-5px);
-            border-color: rgba(239,68,68,0.3);
-        }
-        
-        /* Text Colors */
-        .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #ef4444 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Section Titles */
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #ef4444, #f97316);
-            border-radius: 3px;
-        }
+        [x-cloak] { display: none !important; }
