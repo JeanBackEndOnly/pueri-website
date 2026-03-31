@@ -18,7 +18,7 @@
                 <div class="flex items-center gap-3">
                     <div class="relative">
                         <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-50 animate-pulse"></div>
-                        <img src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-9 w-auto" alt="Logo">
+                        <  src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-9 w-auto" alt="Logo">
                     </div>
                     <span class="font-bold text-lg text-white">ZPuericultureC Org.144, Inc.</span>
                 </div>
@@ -39,8 +39,7 @@
                         <div class="relative">
                             <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-red-500/30 shadow-lg">
                                 <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
-                                @if($profile->profile)
-                                    <img src="{{ Storage::disk('public')->url($profile->profile) }}"
+                                       <img src="{{ Storage::disk('public')->url($profile->profile) }}"
                                          alt="{{ $profile->fname }} {{ $profile->lname }}"
                                          class="relative w-full h-full object-cover">
                                 @else

@@ -242,7 +242,7 @@
                             Contact Applicant
                         </a>
                         <button type="button"
-                                onclick="confirmDelete('{{ route('admin.delete.application', $applicant->id) }}')"
+                                onclick="confirmDelete('{{ route('admin.delete.application.redirect', $applicant->id) }}')"
                                 class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md">
                             Delete Application
                         </button>

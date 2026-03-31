@@ -67,6 +67,7 @@ Route::middleware(['auth', 'admin'])
         // Applications management   
         Route::get('ViewApplication/{id}', [AdminApplicationController::class, 'show'])->name('view.application');
         Route::get('management/DeleteApplication/{id}', [AdminApplicationController::class, 'destroy'])->name('delete.application');
+        Route::get('management/ViewApplication/{id}', [AdminApplicationController::class, 'destroyApplication'])->name('delete.application.redirect');
         
         
     });

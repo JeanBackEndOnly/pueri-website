@@ -19,4 +19,14 @@ class AdminApplicationController extends Controller
         $applicant = Form::with('position')->findOrFail($id);
         return view('admin.ViewApplication', compact('applicant'));
     }
+    public function destroy($id){
+        $id = Form::findOrFail($id);
+        $id->delete();
+        return back()->with('success', 'Application deleted successfully!');
+    }
+    public function destroyApplication($id){
+        $id = Form::findOrFail($id);
+        $id->delete();
+        return redirect()->route('admin.application')->with('success', 'Application form deleted successully!');
+    }
 }
