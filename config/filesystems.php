@@ -26,12 +26,13 @@ return [
             'report' => false,
         ],
 
-        // CHANGED: This now points DIRECTLY to public/storage
         'public' => [
             'driver' => 'local',
-            'root' => public_path('storage'), // Points to real folder
+            'root' => public_path('storage'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
 
         's3' => [
@@ -53,11 +54,9 @@ return [
     |--------------------------------------------------------------------------
     | Symbolic Links
     |--------------------------------------------------------------------------
-    | OPTIONAL: You can keep or remove this — you won't need it anymore
     */
-    
+
     'links' => [
-        // You can comment this out or leave it — won't be used
         // public_path('storage') => storage_path('app/public'),
     ],
 
