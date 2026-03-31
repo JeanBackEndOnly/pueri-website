@@ -10,7 +10,7 @@
                             <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-50 animate-pulse"></div>
                             <img src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-10 w-10 object-contain" alt="Puericulture">
                         </div>
-                        <strong class="text-white font-bold text-lg group-hover:text-red-400 transition">ZPuericulture Center</strong> 
+                        <strong class="text-white font-bold text-lg group-hover:text-red-400 transition">ZPuericultureC Org. no.144, Inc.</strong> 
                     </a>
                 </div>
 

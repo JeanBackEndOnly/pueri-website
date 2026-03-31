@@ -69,7 +69,9 @@
                         <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-50 animate-pulse"></div>
                         <img src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-9 w-auto" alt="Logo">
                     </div>
-                    <span class="font-bold text-lg text-white">ZPuericultureC Org.144, Inc.</span>
+                    <span class="font-bold text-lg text-white">
+                            ZPuericultureC Org. no.144, Inc.
+                        </span>
                 </div>
                 <a href="{{ route('index') }}" class="text-sm text-white/70 hover:text-white transition">Back to Home</a>
             </div>

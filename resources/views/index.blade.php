@@ -31,9 +31,9 @@
                         <img src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-10 w-10 md:h-12 md:w-12 object-contain" alt="Logo">
                     </div>
                     <a href="#">
-                        <h1 class="font-bold text-lg md:text-xl text-white">
-                            ZPuericultureC Org.144, Inc.
-                        </h1>
+                        <h5 class="font-bold text-lg md:text-xl text-white">
+                            ZPuericultureC Org. no.144, Inc.
+                        </h5>
                     </a>
                 </div>
                 
@@ -354,7 +354,7 @@
                     </div>
 
                     <div class="text-center mt-8">
-                        <a href="https://www.google.com/maps/place/Zamboanga+Puericulture+Center+Maternity+Lying-in+Hospital/@6.9071992,122.0730394,17z/data=!3m1!4b1!4m6!3m5!1s0x3250426b2b2d3f29:0x6b4ede3b0b21729!8m2!3d6.9071939!4d122.0756143!16s%2Fg%2F11b66fv081?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition text-sm">
+                        <a href="https://www.google.com/maps/place/Zamboanga+Puericulture+Center+Maternity+Lying-in+Hospital/" target="_blank" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition text-sm">
                             <span>View on Google Maps</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
