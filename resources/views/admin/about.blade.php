@@ -76,7 +76,7 @@
                                                 <div class="flex items-center gap-4">
                                                     <!-- Avatar -->
                                                     <div class="flex-shrink-0">
-                                                        <img src="{{ asset('storage/' . $employee->profile) }}" 
+                                                       <img src="{{ Storage::disk('public')->url($employee->profile) }}"
                                                              class="h-16 w-16 rounded-full object-cover border-2 border-red-500/30 group-hover:border-red-500 transition-colors">
                                                     </div>
                                                     
