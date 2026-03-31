@@ -203,7 +203,7 @@
                         </button>
                         
                         <!-- Attachments -->
-                        <h3 class="text-lg font-semibold text-white mb-4 pb-2 border-b border-white/20 mt-6">Attachments</h3>
+                        <h3 class="text-lg font-semibold text-white mb-4 pb-2 border-b border-white/20 mt-6">Attachments <span class="text-red-900">(required)</span></h3>
                         
                         <div id="files-container" class="space-y-4 mb-6">
                             <div class="file-item border border-white/20 rounded-lg p-4 relative">
