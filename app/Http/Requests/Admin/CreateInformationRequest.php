@@ -33,6 +33,7 @@ class CreateInformationRequest extends FormRequest
             'about' => 'required|string|min:20',
             'time_available' => 'required|string|max:255',
             'position' => 'required|string|max:255',
+            'joined_at' => 'nullable|date',
             'unit_id' => 'required|exists:unit,id'
         ];
     }

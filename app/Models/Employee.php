@@ -20,6 +20,7 @@ class Employee extends Model
         'profile',
         'position',
         'about',
+        'joined_at',
         'time_available'
     ];
 

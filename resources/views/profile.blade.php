@@ -18,7 +18,7 @@
                 <div class="flex items-center gap-3">
                     <div class="relative">
                         <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-50 animate-pulse"></div>
-                        <  src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-9 w-auto" alt="Logo">
+                        <img src="{{ asset('system_image/pueri-logo.png') }}" class="relative h-9 w-auto" alt="Logo">
                     </div>
                     <span class="font-bold text-lg text-white">ZPuericultureC Org.144, Inc.</span>
                 </div>
@@ -39,7 +39,8 @@
                         <div class="relative">
                             <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-red-500/30 shadow-lg">
                                 <div class="absolute inset-0 bg-red-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
-                                       <img src="{{ Storage::disk('public')->url($profile->profile) }}"
+                                @if(isset($profile->profile))   
+                                    <img src="{{ Storage::disk('public')->url($profile->profile) }}"
                                          alt="{{ $profile->fname }} {{ $profile->lname }}"
                                          class="relative w-full h-full object-cover">
                                 @else
@@ -144,16 +145,16 @@
                                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
                                 <div class="flex-1">
                                     <p class="text-white/80">Joined Organization</p>
-                                    <p class="text-white/50 text-sm">{{ $profile->created_at->format('F d, Y \a\t h:i A') }}</p>
+                                    <p class="text-white/50 text-sm">{{ isset($profile->joined_at) ? \Carbon\Carbon::parse($profile->joined_at)->format('M d Y') : 'NO DATA' }}</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-3">
+                            {{-- <div class="flex items-center gap-3">
                                 <div class="w-3 h-3 bg-red-500 rounded-full"></div>
                                 <div class="flex-1">
                                     <p class="text-white/80">Last Updated</p>
                                     <p class="text-white/50 text-sm">{{ $profile->updated_at->format('F d, Y \a\t h:i A') }}</p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
